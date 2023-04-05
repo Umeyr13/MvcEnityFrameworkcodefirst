@@ -1,0 +1,65 @@
+﻿@using MvcEnityFrameworkcodefirst.Models.Yenimodel
+@model _HomapageViewModel
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>HomePage</title>
+    <script src="~/Scripts/jquery-3.6.4.js"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="row"> <hr /></div>
+        <div class="row">
+            <div class="col-md-6">
+                <div>
+                    @Html.ActionLink("Yeni Kişi", "yeni", "Kisi",null,new {@class ="btn btn-primary"})
+
+                </div>
+                <ul class="list-group">
+                    <li class="list-group-item active">Kişiler</li>
+
+                    @foreach (var item in Model.Kişiler)
+                    {
+                        <li class="list-group-item">
+                            <span class="glyphicon glyphicon-user"></span>
+                            @(item.Ad +" "+item.Soyad)
+
+                        </li>
+                    }
+
+                </ul>
+            </div>
+
+            <div class="col-md-6">
+                <ul class="list-group">
+                    <div>
+
+                        @Html.ActionLink("Yeni Adres", "yeni", "Adres", null, new { @class = "btn btn-primary" })
+
+                    </div>
+                        <br />
+                        <li class="list-group-item active">Adresler</li>
+                    @foreach (var item in Model.adresler)
+                    {
+                        <li class="list-group-item">
+                            <span class="glyphicon glyphicon-paperclip"></span>
+                            <span class="glyphicon glyphicon-home "></span>
+                            @(item.Adrestanim)
+
+                        </li>
+                    }
+
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+</html>
