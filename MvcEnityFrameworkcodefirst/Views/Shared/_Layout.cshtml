@@ -12,14 +12,14 @@
     <style>
         .navbar-collapse {
             display: block;
-            margin: 14px;
+            margin: auto;
             border: 3px none #b76565;
             padding: 5px;
         }
 
         #menu li {
             display: inline-block;
-            width: min-content;
+            width: fit-content;
             height: min-content;
             border: 1px solid #000000;
             text-align: start;
@@ -55,8 +55,9 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav" id="menu">
 
-                    <li>@Html.ActionLink("Anasayfa", "homepage", "Home")</li>
-                    <li>@Html.ActionLink("Hakkımızda","Yeni", "Kisi")</li>
+                    @*<li>@Html.ActionLink("Anasayfa", "homepage", "Home")</li>*@
+                    <li>@Html.ActionLink("Kişi Ekle","Yeni", "Kisi")</li>
+                    <li>@Html.ActionLink("Adres Ekle","Yeni","Adres")</li>
           
                     <b>StartView</b>
                 </ul>

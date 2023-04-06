@@ -27,7 +27,7 @@ namespace MvcEnityFrameworkcodefirst.Models
            
             for (int i = 1; i < 11; i++)
             {
-                //Id ıdenty kensidi alır
+                //Id = ıdenty kensidi alır
                 Kişiler kisi = new Kişiler();
                 kisi.Ad=FakeData.NameData.GetFirstName();
                 kisi.Soyad=FakeData.NameData.GetSurname();

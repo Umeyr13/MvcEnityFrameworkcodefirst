@@ -103,7 +103,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Site.css" />
+    <Content Include="Content\SiteCss.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -125,6 +125,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdresController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KisiController.cs" />
     <Compile Include="Global.asax.cs">
@@ -145,6 +146,11 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Kisi\Yeni.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Adres\Yeni.cshtml" />
+    <Content Include="Views\Kisi\Duzenle.cshtml" />
+    <Content Include="Views\Adres\Duzenle.cshtml" />
+    <Content Include="Views\Kisi\Sil.cshtml" />
+    <Content Include="Views\Adres\Sil.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,0 +1,25 @@
+﻿@model  MvcEnityFrameworkcodefirst.Models.Adresler
+@{
+    ViewBag.Title = "Sil";
+}
+
+<h2>Sil</h2>>
+<hr />
+<p>Aşağıdaki adresi silmek istediğinize emin misiniz?</p>
+<table>
+
+    <tr>
+        <td><b>Ad Soyad:</b></td>
+        <td>@(Model.kisi.Ad+" "+ Model.kisi.Soyad))</td>
+    </tr>
+    <tr>
+        <td><b>Adres:</b></td>
+        <td>@Model.Adrestanim</td>
+    </tr>
+</table>
+<br />
+@using (Html.BeginForm())
+{
+    <div class=" input-group"></div>
+    <input type="submit" name="name" value="Sil" class="btn btn-success" />
+}
