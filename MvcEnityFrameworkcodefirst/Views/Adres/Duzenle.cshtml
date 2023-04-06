@@ -1,0 +1,39 @@
+﻿@model MvcEnityFrameworkcodefirst.Models.Adresler
+
+@{
+    ViewBag.Title = "Duzenle";
+}
+
+<h2>Adres Duzenle</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="input-group ">
+        <span class="input-group-addon">Adres</span>
+        @*<input type="text" class="form-control" placeholder="Adınız" > bunun yerine alttakini yazdık modeli de alabiliyor. *@
+        @Html.TextAreaFor(x => x.Adrestanim, new { @class = "form-control", placeholder = "Adres", cols = "30", rows = "10" })
+    </div>
+    <br />
+    <div class="input-group">
+        <span class="input-group-addon">Kişi</span>
+        @*<input type="text" class="form-control" placeholder="Adınız" > bunun yerine alttakini yazdık modeli de alabiliyor. *@
+        @Html.DropDownListFor(x => x.kisi.ID, (List<SelectListItem>)ViewBag.kisiler, new { @class = "form-control" })
+    </div>
+    <br />
+
+    <br />
+    <div class="input-group">
+        <input type="submit" value="Kaydet" class="btn btn-success" />
+
+    </div>
+
+}
+
+<div class="input-group">
+    @if (ViewBag.mesaj != null)
+    {
+        <div class="alert alert-@ViewBag.renk" role="alert"> @ViewBag.mesaj</div>
+
+    }
+
+</div>

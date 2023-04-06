@@ -1,28 +1,24 @@
-﻿@model MvcEnityFrameworkcodefirst.Models.Kişiler
+﻿@model MvcEnityFrameworkcodefirst.Models.Adresler
 @{
     ViewBag.Title = "Yeni";
 }
 
-<h2>Yeni</h2>
+<h2>Yeni Adres</h2>
 @using (Html.BeginForm())
 {
     <div class="input-group ">
-        <span class="input-group-addon">Ad</span>
+        <span class="input-group-addon">Adres</span>
         @*<input type="text" class="form-control" placeholder="Adınız" > bunun yerine alttakini yazdık modeli de alabiliyor. *@
-        @Html.TextBoxFor(x => x.Ad, new { @class = "form-control", placeholder = ViewBag.Ad })
+        @Html.TextAreaFor(x => x.Adrestanim, new { @class = "form-control", placeholder = "Adres",cols="30",rows="10" })
     </div>
     <br />
     <div class="input-group">
-        <span class="input-group-addon">Soyad</span>
+        <span class="input-group-addon">Kişi</span>
         @*<input type="text" class="form-control" placeholder="Adınız" > bunun yerine alttakini yazdık modeli de alabiliyor. *@
-        @Html.TextBoxFor(x => x.Soyad, new { @class = "form-control", placeholder = "Soyadınız" })
+        @Html.DropDownListFor(x => x.kisi.ID,(List<SelectListItem>)ViewBag.kisiler, new { @class = "form-control"})
     </div>
     <br />
-    <div class="input-group">
-        <span class="input-group-addon">Yas</span>
-        @*<input type="text" class="form-control" placeholder="Adınız" > bunun yerine alttakini yazdık modeli de alabiliyor. *@
-        @Html.TextBoxFor(x => x.Yas, new { @class = "form-control", placeholder = "Yaşınız" })
-    </div>
+
     <br />
     <div class="input-group">
         <input type="submit" value="Kaydet" class="btn btn-success" />
@@ -37,5 +33,5 @@
         <div class="alert alert-@ViewBag.renk" role="alert"> @ViewBag.mesaj</div>
 
     }
-   
+
 </div>

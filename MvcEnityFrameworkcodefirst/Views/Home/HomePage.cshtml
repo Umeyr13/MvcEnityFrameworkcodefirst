@@ -18,15 +18,17 @@
         <div class="row">
             <div class="col-md-6">
                 <div>
-                    @Html.ActionLink("Yeni Kişi", "yeni", "Kisi",null,new {@class ="btn btn-primary"})
-
+                    @Html.ActionLink("Yeni Kişi", "yeni", "Kisi", null, new { @class = "btn btn-primary" })
                 </div>
+                <br />
                 <ul class="list-group">
                     <li class="list-group-item active">Kişiler</li>
 
                     @foreach (var item in Model.Kişiler)
                     {
                         <li class="list-group-item">
+                            @Html.ActionLink("Düzenle", "Duzenle", "Kisi", new { kisiId = item.ID, Ad= item.Ad }, new { @class = "btn btn-warning btn-xs" })
+                            @Html.ActionLink("Sil", "Sil", "Kisi", new { kisiId = item.ID }, new { @class = "btn btn-danger btn-xs" })
                             <span class="glyphicon glyphicon-user kirmizi"></span>
                             @(item.Ad +" "+item.Soyad) <i>(@item.Yas)</i>
 
@@ -46,11 +48,13 @@
                     <li class="list-group-item active">Adresler</li>
                     @foreach (var item in Model.adresler)
                     {
-                        <li class="list-group-item">                            
-                            <span class="glyphicon glyphicon-home yesil "></span>
-                            @(item.Adrestanim) <i>(@(item.kisi.Ad+" "+item.kisi.Soyad))</i>
-
-                        </li>
+                <li class="list-group-item">
+                    @Html.ActionLink("Düzenle", "Duzenle", "Adres", new { AdresId = item.ID }, new { @class = "btn btn-warning btn-xs" })
+                    @Html.ActionLink("Sil", "Sil", "Adres", new { AdresId = item.ID }, new { @class = "btn btn-warning btn-xs" })
+                    <span class="glyphicon glyphicon-home yesil "></span>
+                    @(item.Adrestanim) <i>(@(item.kisi.Ad+" "+item.kisi.Soyad))</i>
+                    
+                </li>
                     }
                 
                 </ul>

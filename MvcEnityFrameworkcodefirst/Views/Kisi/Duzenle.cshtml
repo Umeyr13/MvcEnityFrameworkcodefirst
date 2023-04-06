@@ -1,27 +1,32 @@
 ﻿@model MvcEnityFrameworkcodefirst.Models.Kişiler
+
 @{
-    ViewBag.Title = "Yeni";
+    ViewBag.Title = "Duzenle";
 }
 
-<h2>Yeni</h2>
+<h2>Bilgileri Düzenle</h2>
+
+
 @using (Html.BeginForm())
 {
     <div class="input-group ">
         <span class="input-group-addon">Ad</span>
         @*<input type="text" class="form-control" placeholder="Adınız" > bunun yerine alttakini yazdık modeli de alabiliyor. *@
-        @Html.TextBoxFor(x => x.Ad, new { @class = "form-control", placeholder = ViewBag.Ad })
+        
+        @Html.TextBoxFor(x => x.Ad , new { @class = "form-control", placeholder ="Adınız" })
     </div>
     <br />
     <div class="input-group">
         <span class="input-group-addon">Soyad</span>
         @*<input type="text" class="form-control" placeholder="Adınız" > bunun yerine alttakini yazdık modeli de alabiliyor. *@
-        @Html.TextBoxFor(x => x.Soyad, new { @class = "form-control", placeholder = "Soyadınız" })
+        @Html.TextBoxFor(x => x.Soyad , new { @class = "form-control", placeholder = "Soyadınız" })
+        
     </div>
     <br />
     <div class="input-group">
         <span class="input-group-addon">Yas</span>
         @*<input type="text" class="form-control" placeholder="Adınız" > bunun yerine alttakini yazdık modeli de alabiliyor. *@
-        @Html.TextBoxFor(x => x.Yas, new { @class = "form-control", placeholder = "Yaşınız" })
+        @Html.TextBoxFor(x => x.Yas , new { @class = "form-control", placeholder = "Yaşınız" })
     </div>
     <br />
     <div class="input-group">
@@ -37,5 +42,5 @@
         <div class="alert alert-@ViewBag.renk" role="alert"> @ViewBag.mesaj</div>
 
     }
-   
+
 </div>
